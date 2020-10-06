@@ -25,7 +25,7 @@ export const people = [
   },
 ]
 
-export const movies = [
+export let movies = [
   {
     id: "1",
     name: "kingsman",
@@ -62,10 +62,10 @@ export const getMovieById = (id) => {
 }
 
 export const deleteMovie = (id) => {
-  const cleanMovies = movies.filter((movie) => movie.id !== String(id))
-  if (movies.length > cleanMovies.length) {
+  const filteredMovies = movies.filter((movie) => movie.id !== String(id))
+  if (movies.length > filteredMovies.length) {
     // 삭제된 것이 있는 경우
-    movies = cleanMovies
+    movies = filteredMovies
     return true
   } else {
     return false
