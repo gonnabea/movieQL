@@ -96,3 +96,11 @@ export const getMovies = (limit, rating) => {
     .then((res) => res.json())
     .then((json) => json.data.movies)
 }
+
+export const getMovieById = async (id) => {
+  const movies = await getMovies()
+  console.log(id)
+  const filteredMovie = movies.filter((movie) => id === movie.id)
+  console.log(filteredMovie)
+  return filteredMovie
+}

@@ -14,11 +14,12 @@
 //   },
 // }
 
-import { getMovies } from "./db"
+import { getMovieById, getMovies } from "./db"
 
 const resolvers = {
   Query: {
     movies: (_, { limit, rating }) => getMovies(limit, rating),
+    movie: (_, { id }) => getMovieById(id),
   },
 }
 
